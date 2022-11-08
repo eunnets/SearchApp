@@ -20,7 +20,7 @@ namespace SearchApp.Lib.Tests.Utilities
         }
 
         [Fact]
-        public async Task When_SearchRequest_is_invalid_Search_should_work_as_expected()
+        public async Task When_SearchRequest_is_invalid_Search_should_throw_an_exception()
         {
             _mockHttpMessageHandler.Protected()
                 .Setup<Task<HttpResponseMessage>>(nameof(HttpClient.SendAsync), ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsAny<CancellationToken>())
