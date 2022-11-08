@@ -1,0 +1,38 @@
+﻿<Window x:Class="SearchApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SearchApp"
+        mc:Ignorable="d"
+        Title="Search App" Height="395" Width="586">
+    <Grid HorizontalAlignment="Left" Width="591">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="121*"/>
+            <RowDefinition Height="258*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="KeywordsTextBox" HorizontalAlignment="Left" Margin="41,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="153" Text="conveyancing software" Height="18"/>
+        <Button x:Name="SearchButton" Content="Google Search" HorizontalAlignment="Left" Margin="41,86,0,0" VerticalAlignment="Top" Click="SearchButton_Click" Width="92" RenderTransformOrigin="0.137,0.543" Height="20"/>
+        <TextBox x:Name="UrlTextBox" HorizontalAlignment="Left" Margin="212,0,0,0" TextWrapping="Wrap" Text="www.smokeball.com.au" VerticalAlignment="Center" Width="146" Height="18"/>
+        <TextBox x:Name="HighestAppearanceTextBox" HorizontalAlignment="Left" Margin="176,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Height="18" Grid.Row="1"/>
+        <TextBox x:Name="MaxNumberTextBox" HorizontalAlignment="Left" Margin="388,0,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Center" Width="143" Height="18"/>
+        <ListView x:Name="ResultListView" Margin="41,49,60,31" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="80" Header="Rank" DisplayMemberBinding="{Binding Rank}" />
+                    <GridViewColumn Width="400" Header="URL" DisplayMemberBinding="{Binding Url}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="NumberOfAppearanceTextBox" HorizontalAlignment="Left" Margin="424,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Height="18" Grid.Row="1"/>
+        <Label x:Name="KeywordsLabel" Content="Key words" HorizontalAlignment="Left" Margin="41,24,0,0" VerticalAlignment="Top" Height="26" Width="123"/>
+        <Label x:Name="UrlLabel" Content="URL" HorizontalAlignment="Left" Margin="215,24,0,0" VerticalAlignment="Top" Height="26" Width="39"/>
+        <Label Content="Highest appearance" HorizontalAlignment="Left" Margin="41,5,0,0" VerticalAlignment="Top" Height="26" Grid.Row="1" Width="119"/>
+        <Label Content="Number of appearance" HorizontalAlignment="Left" Margin="267,6,0,0" VerticalAlignment="Top" Height="26" Grid.Row="1" Width="137"/>
+        <Label Content="Max number of results" HorizontalAlignment="Left" Margin="388,21,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
